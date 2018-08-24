@@ -1,0 +1,57 @@
+spring:
+  #编码过滤器配置
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+  messages:
+    encoding: UTF-8
+  #数据源配置
+  datasource:
+    username: root
+    password: password
+#   password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springbootdb?useUnicode=true&characterEncoding=utf8
+#   url: jdbc:mysql://192.168.99.100:3306/sakila?useUnicode=true&characterEncoding=utf8
+  #配置配置文件
+  profiles:
+    active: dev
+  #配置freemarker
+  freemarker:
+    charset: UTF-8
+    cache: false
+    expose-request-attributes: true
+    request-context-attribute: request
+    expose-session-attributes: true
+    content-type: text/html
+    template-loader-path: classpath:/web/
+    suffix: .ftl
+    check-template-location: true
+  redis:
+    password:
+    database: 0
+    port: 6379
+    host: 127.0.0.1
+    timeout: 0
+
+## 端口
+server:
+  port: 8080
+
+## Mybatis 配置
+mybatis:
+  typeAliasesPackage: com.hand.demo.domain
+  mapperLocations: classpath:mapper/*.xml
+
+## 配置日志
+logging:
+  file: log/CityManager01.log
+  level:
+    com:
+      hand:
+        demo: debug
+    org:
+      springframework:
+        web: info

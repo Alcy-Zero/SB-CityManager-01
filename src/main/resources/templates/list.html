@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link th:href="@{bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
+    <meta charset="UTF-8"/>
+    <title>测试ThymeLeaf</title>
+</head>
+<body>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">访问model</h3>
+    </div>
+    <div class="panel-body">
+        <span th:text="${singleCity.id}"></span>
+        <span th:text="${singleCity.provinceId}"></span>
+        <span th:text="${singleCity.cityName}"></span>
+        <span th:text="${singleCity.description}"></span>
+    </div>
+
+    <div th:if="${not #lists.isEmpty(cityList1)}">
+        <div class="panel panel-primary">
+            <h3 class="panel-title">列表一</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="panel-group">
+                <li class="list-group-item" th:each="city:${cityList1}">
+                    <span th:text="${city.id}"></span>
+                    <span th:text="${city.provinceId}"></span>
+                    <span th:text="${city.cityName}"></span>
+                    <span th:text="${city.description}"></span>
+                    <button class="btn" th:onclick="'getName(\''+${city.cityName}+'\')'">获得名字</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<script th:src="@{jquery-3.3.1.min.js}" type="text/javascript"></script>
+<script th:src="@{bootstrap/js/bootstrap.min.js}"></script>
+<script th:inline="javascript">
+    var single = [[${singleCity}]];
+    console.log(single.cityName + "/" + single.description);
+
+    function getName(cityName) {
+        console.log(cityName);
+    }
+</script>
+
+</body>
+</html>

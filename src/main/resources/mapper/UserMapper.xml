@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hand.demo.infra.mapper.UserMapper">
+
+    <resultMap id="UserResultMap" type="com.hand.demo.domain.entity.User">
+        <result column="customer_id" property="customerId"/>
+
+    </resultMap>
+
+    <parameterMap id="User" type="com.hand.demo.domain.entity.User"/>
+
+    <sql id="User_Column_List">
+        id, name, age, password
+    </sql>
+
+    <select id="login" resultType="java.lang.Long">
+        select id from user
+        where name=#{name}
+        AND password=#{password}
+    </select>
+
+</mapper>

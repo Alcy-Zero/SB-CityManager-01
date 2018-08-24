@@ -1,0 +1,10 @@
+#server:
+#  port: 9090
+
+book:
+  author: 不知道dev
+  name: NoOne
+
+author:
+  name: 蝦蛤dev
+  age: 32
