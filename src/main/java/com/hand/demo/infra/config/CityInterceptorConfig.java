@@ -1,6 +1,6 @@
 package com.hand.demo.infra.config;
 
-import com.hand.demo.api.adapter_interceptor.CityInterceptor;
+import com.hand.demo.api.filter_interceptor.CityInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

@@ -1,4 +1,4 @@
-package com.hand.demo.api.adapter_interceptor;
+package com.hand.demo.api.filter_interceptor;
 
 import org.springframework.core.annotation.Order;
 

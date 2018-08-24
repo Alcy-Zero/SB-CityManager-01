@@ -1,9 +1,6 @@
-package com.hand.demo.api.service.impl;
+package com.hand.demo.app.service.impl;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import com.hand.demo.api.service.CityService;
-import com.hand.demo.domain.Page;
+import com.hand.demo.app.service.CityService;
 import com.hand.demo.infra.mapper.CityMapper;
 import com.hand.demo.domain.entity.City;
 import org.slf4j.Logger;
@@ -33,23 +30,8 @@ public class CityServiceImpl implements CityService {
     private CityMapper cityMapper;
 
     @Override
-    public List<City> findAllCity(Page page) {
-        PageHelper.startPage(page.getPageNum(), page.getPageSize());
+    public List<City> findAllCity() {
         List<City> list = cityMapper.findAllCity();
-        //用PageInfo对结果进行包装
-        PageInfo pageinfo = new PageInfo(list);
-        //测试PageInfo全部属性
-        //PageInfo包含了非常全面的分页属性
-        logger.info("PageNum:"+(pageinfo.getPageNum()));
-        logger.info("PageSize:"+(pageinfo.getPageSize()));
-        logger.info("getStartRow:"+(pageinfo.getStartRow()));
-        logger.info("getEndRow:"+pageinfo.getEndRow());
-        logger.info("getTotal:"+(pageinfo.getTotal()));
-        logger.info("getPages:"+(pageinfo.getPages()));
-        logger.info("getFirstPage:"+(pageinfo.getFirstPage()));
-        logger.info("getLastPage:"+(pageinfo.getLastPage()));
-        logger.info("isHasPreviousPage:"+(pageinfo.isHasPreviousPage()));
-        logger.info("isHasNextPage:"+(pageinfo.isHasNextPage()));
         return list;
     }
 

@@ -1,6 +1,6 @@
-package com.hand.demo.api.service.impl;
+package com.hand.demo.app.service.impl;
 
-import com.hand.demo.api.service.UserService;
+import com.hand.demo.app.service.UserService;
 import com.hand.demo.infra.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

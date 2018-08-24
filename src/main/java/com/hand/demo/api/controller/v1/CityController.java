@@ -1,9 +1,8 @@
 package com.hand.demo.api.controller.v1;
 
 import com.hand.demo.Application;
-import com.hand.demo.domain.Page;
 import com.hand.demo.domain.entity.City;
-import com.hand.demo.api.service.CityService;
+import com.hand.demo.app.service.CityService;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * 城市 Controller 实现 Restful HTTP 服务
@@ -27,25 +25,21 @@ public class CityController {
 
     //返回视图
     @GetMapping(value = "/list1")
-    public String findAllCity(Model model,Page page) {
-        //查看sort的值
-        logger.debug("页码："+page.getPageNum());
-        logger.debug("每页："+page.getPageSize());
-        logger.debug("排序"+page.getSort());
-        List<City> cityList = cityService.findAllCity(page);
+    public String findAllCity(Model model) {
+        List<City> cityList = cityService.findAllCity();
         model.addAttribute("cityList", cityList);
         return "cityList";
     }
     //返回json
     @GetMapping(value = "/list2")
     @ResponseBody
-    public List<City> findAllCity2(Page page) {
-        return cityService.findAllCity(page);
+    public List<City> findAllCity2() {
+        return cityService.findAllCity();
     }
     //返回视图
     @GetMapping("/list3")
-    public String findAllCity3(Model model,Page page) {
-        List<City> list = cityService.findAllCity(page);
+    public String findAllCity3(Model model) {
+        List<City> list = cityService.findAllCity();
         model.addAttribute("list", list);
         return "cityAll";
     }

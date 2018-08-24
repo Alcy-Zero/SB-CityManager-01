@@ -1,6 +1,6 @@
 package com.hand.demo.api.controller.v1;
 
-import com.hand.demo.api.service.UserService;
+import com.hand.demo.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;

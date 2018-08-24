@@ -1,6 +1,5 @@
-package com.hand.demo.api.service;
+package com.hand.demo.app.service;
 
-import com.hand.demo.domain.Page;
 import com.hand.demo.domain.entity.City;
 
 import java.util.List;
@@ -11,7 +10,7 @@ import java.util.List;
 public interface CityService {
 
 
-    List<City> findAllCity(Page page);
+    List<City> findAllCity();
 
     City findCityById(Long id);
 

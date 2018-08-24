@@ -1,27 +1,42 @@
-## 
 
 ### CityManager01
 
 ---
 
-用到:
-
-- Pagehelper
-- Thymeleaf
-- freemarker
-- 日志Logger
+Use:
+- SpringBoot
 - Mybatis连接MySQL
 - Redis缓存
-- （AOP编程）（过滤器）（拦截器）
+
+<br/>
+
+- 日志Logger
+- 热部署
+
+<br/>
+
+- （过滤器）Filter,
+
+    滤"/*"
+    
+- （AOP）Aspect,
+
+    切"execution(public * com.hand.demo.api.controller.v1.\*.*(..))"
+
+- （拦截器）Interceptor,
+
+    拦"/v2/**"
+    
+- Thymeleaf
+- freemarker
 
 ---
 
-功能：
+Function：
 
-- User登陆
-- City的查询、增加、修改、删除
-- 设置请求头、响应头信息
-- 读取配置文件变量
-- 
+- 请求头，响应头，Cookie，转发，重定向
+- Author读取配置文件变量
+- user登陆(模拟)
+- City CRUD
 
 ---

@@ -1,4 +1,4 @@
-package com.hand.demo.domain;
+package com.hand.demo.domain.entity;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
