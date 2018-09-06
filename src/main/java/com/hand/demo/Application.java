@@ -16,7 +16,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @ServletComponentScan
 public class Application {
 
-    protected static final Logger logger = LoggerFactory.getLogger(Application.class);
+    private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
 
