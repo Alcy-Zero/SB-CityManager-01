@@ -10,7 +10,7 @@ Use:
 
 <br/>
 
-- 日志Logger
+- 日志log4j2
 - 热部署
 
 <br/>
@@ -22,7 +22,8 @@ Use:
 - （AOP）Aspect,
 
     切"execution(public * com.hand.demo.api.controller.v1.\*.*(..))"
-
+    记录http请求，记录响应时间
+    
 - （拦截器）Interceptor,
 
     拦"/v2/**"

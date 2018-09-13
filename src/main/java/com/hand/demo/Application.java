@@ -24,7 +24,7 @@ public class Application {
 
         SpringApplication.run(Application.class, args);
 
-        logger.error("SpringBoot加载完毕");
+        logger.info("SpringBoot加载完毕");
     }
 
 }

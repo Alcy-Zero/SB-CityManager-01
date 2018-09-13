@@ -23,6 +23,9 @@ public class CityController {
     @Autowired
     private CityService cityService;
 
+    long s1 = 0;
+    long s2 = 0;
+
     //返回视图
     @GetMapping(value = "/list1")
     public String findAllCity(Model model) {
@@ -34,7 +37,10 @@ public class CityController {
     @GetMapping(value = "/list2")
     @ResponseBody
     public List<City> findAllCity2() {
-        return cityService.findAllCity();
+        s1 = System.currentTimeMillis();
+        List<City> cities = cityService.findAllCity();
+        s2 = System.currentTimeMillis();
+        return cities;
     }
     //返回视图
     @GetMapping("/list3")
@@ -79,5 +85,21 @@ public class CityController {
     @DeleteMapping("/api/{id}")
     public void modifyCity(@PathVariable("id") Long id) {
         cityService.deleteCity(id);
+    }
+
+    public long getS1() {
+        return s1;
+    }
+
+    public void setS1(long s1) {
+        this.s1 = s1;
+    }
+
+    public long getS2() {
+        return s2;
+    }
+
+    public void setS2(long s2) {
+        this.s2 = s2;
     }
 }

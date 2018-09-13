@@ -14,7 +14,7 @@ import java.io.IOException;
 @WebFilter(filterName = "testFilter1", urlPatterns = "/*")
 public class TestFilter implements Filter {
 
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    private static final Logger logger = LoggerFactory.getLogger(TestFilter.class);
 
     @Override
     public void init(FilterConfig filterConfig) {
@@ -24,10 +24,10 @@ public class TestFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
             throws IOException, ServletException {
-        logger.info("进行了一次拦截");
-        System.out.println("############TestFilter1 doFilter before###########");
+        //logger.info("进行了一次拦截");
+        //logger.info("############TestFilter1 doFilter before###########");
         filterChain.doFilter(servletRequest, servletResponse);   //必须执行，否则前端请求不会进入
-        System.out.println("############TestFilter1 doFilter after############");
+        //logger.info("############TestFilter1 doFilter after############");
     }
 
     @Override
