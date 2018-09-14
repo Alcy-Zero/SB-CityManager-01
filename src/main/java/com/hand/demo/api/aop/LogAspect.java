@@ -1,9 +1,6 @@
 package com.hand.demo.api.aop;
 
-import com.alibaba.fastjson.JSONObject;
-import com.hand.demo.Application;
 import com.hand.demo.api.controller.v1.CityController;
-import groovy.util.logging.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
